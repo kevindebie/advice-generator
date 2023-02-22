@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link href="/dist/output.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <title>Advice generator app</title>
+
+  <style>
+    .fade {
+      animation: fadeIn 1500ms;
+    }
+
+    @keyframes fadeIn {
+      from {opacity:0;}
+      to {opacity: 1;}
+    }
+
+    .disable {
+      pointer-events: none;
+      opacity: 0.35;
+      transition: opacity .3s;
+    }
+
+    .disable img {
+      transition-delay: 1s;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-center items-center bg-darkblue">
+
+  <main class="flex items-center flex-1">
+    <div class="bg-dark-grayblue p-8 pb-16 rounded-lg w-[90vw] md:max-w-[600px] text-center text-lightcyan relative shadow-2xl">
+
+      <!-- Advice number -->
+      <span class="block uppercase text-neongreen text-sm tracking-[4px]">Advice #<span id="advice-number"></span></span>
+
+      <!-- Advice quote -->
+      <p id="advice-quote" class="block text-2xl mt-5">"Lorem ipsum dolor sit amet."</p>
+
+      <!-- Separator -->
+      <div class="mt-8 text-center">
+        <img class="hidden md:inline-block" src="images/pattern-divider-desktop.svg" alt="separator">
+        <img class="inline-block md:hidden" src="images/pattern-divider-mobile.svg" alt="separator">
+      </div>
+
+      <!-- Advice button -->
+      <a id="dice-button" class="group flex items-center justify-center mx-auto bg-neongreen w-16 h-16 rounded-full absolute -bottom-8 left-1/2 -translate-x-1/2 mt-8"
+         href="#"
+         onclick="newAdvice()">
+        <img class="inline-block duration-500 group-hover:rotate-90" src="images/icon-dice.svg" alt="advice button">
+      </a>
+
+    </div>
+  </main>
+
+  <footer class="py-2">
+    <div class="text-xs text-center text-grayblue">
+      Challenge by <a class="underline" href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by Kevin de Bie.
+    </div>
+  </footer>
+
+  <script src="src/main.js"></script>
+</body>
+</html>
